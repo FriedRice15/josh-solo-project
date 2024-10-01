@@ -66,10 +66,20 @@ test('Header Links', async () => {
 });
 
 test('Footer Links', async () => {
-
+    
 });
 
 test('Socials', async () => {
-
+    await website.navigate();
+    await website.driver.sleep(2000);
+    await website.scrollToElement(website.insta);
+    await website.click(website.insta);
+    await website.goBack();
+    await website.scrollToElement(website.twitter);
+    await website.click(website.twitter);
+    await website.goBack();
+    await website.scrollToElement(website.tiktok);
+    await website.click(website.tiktok);
+    await website.goBack();
     await website.driver.quit();
 });

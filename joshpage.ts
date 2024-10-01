@@ -90,4 +90,7 @@ export class noHopeSupply extends BasePage {
             await this.driver.close();
             await this.driver.switchTo().window(myTabs[0]);
     };
-}
+    async goBack() {
+        window.history.back();
+    };
+};
