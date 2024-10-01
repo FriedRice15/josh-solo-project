@@ -8,7 +8,8 @@ export class noHopeSupply extends BasePage {
     tiktok: By = By.xpath ('(//a[@href="https://www.tiktok.com/@nohopesupply"])[2]');
     shirt: By = By.xpath ('(//div[@class="product-tile"])[1]');
     size: By = By.xpath ('(//div[@class="radio-button radio-button--narrow"])[2]');
-    addToCart: By = By.xpath ('(//button[@class="button button--primary button--expand"])[1]');
+    quantity: By = By.xpath ('(//option[@value="2"])');
+    addToCartButton: By = By.xpath ('(//button[@class="button button--primary button--expand"])[1]');
     home: By = By.xpath ('(//li[@class="header__list-item"])[1]');
     shop: By = By.xpath ('(//li[@class="header__list-item"])[2]');
     noHopeClub: By = By.xpath ('(//li[@class="header__list-item"])[3]');
@@ -24,16 +25,16 @@ export class noHopeSupply extends BasePage {
     streetAddress: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[3]');
     apartment: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[4]');
     city: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[5]');
-    country: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[6]');
-    state: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[7]');
+    country: By = By.xpath ('(//option[@value="US"])');
+    state: By = By.xpath ('(//option[@value="UT"])');
     zipcode: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[8]')
+    confirm: By = By.xpath ('(//span[@class="sc-jtQUzJ fFaa-di"])[2]');
 
 
     constructor() {
         super({url: 'https://nohopesupply.com/en-usd'});
     };
 
-    //for links
     async tabSwitch() {
         let myTabs = await this.driver.getAllWindowHandles();
         await this.driver.switchTo().window(myTabs[1]);
@@ -47,17 +48,46 @@ export class noHopeSupply extends BasePage {
         .move({origin: scrollThing})
         .perform()
     };
-    async canHover(elementBy: By) {
+    async hover(elementBy: By) {
         const hover = this.driver.actions();
         const startElement = await this.getElement(elementBy);
         await this.actionWiggle(hover, startElement, 100);
         await hover.perform();
-        await fs.writeFile(`#{__dirname}/hoverPhoto.png`,
-            await this.driver.takeScreenshot(), "base64",
-            (e) => {
-                if(e) console.error(e)
-                    else console.log
-            }
-        )
     };
-};
+    async addToCart() {
+        let myTabs = await this.driver.getAllWindowHandles();
+        await  this.driver.switchTo().window(myTabs[1]);
+        fs.writeFile(`${__dirname})/addToCart.png`,
+            await this.driver.takeScreenshot(),"base64",
+            (e) => {
+                if(e) console.log(e)
+                    else console.log('add to cart test');
+            });
+            await this.driver.close();
+            await this.driver.switchTo().window(myTabs[0]);
+    };
+    async checkoutTest() {
+        let myTabs = await this.driver.getAllWindowHandles();
+        await  this.driver.switchTo().window(myTabs[1]);
+        fs.writeFile(`${__dirname})/checkoutTest.png`,
+            await this.driver.takeScreenshot(),"base64",
+            (e) => {
+                if(e) console.log(e)
+                    else console.log('checkout test');
+            });
+            await this.driver.close();
+            await this.driver.switchTo().window(myTabs[0]);
+    };
+    async headerLinks() {
+        let myTabs = await this.driver.getAllWindowHandles();
+        await  this.driver.switchTo().window(myTabs[1]);
+        fs.writeFile(`${__dirname})/headerLinkTest.png`,
+            await this.driver.takeScreenshot(),"base64",
+            (e) => {
+                if(e) console.log(e)
+                    else console.log('header test');
+            });
+            await this.driver.close();
+            await this.driver.switchTo().window(myTabs[0]);
+    };
+}
