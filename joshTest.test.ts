@@ -66,7 +66,17 @@ test('Header Links', async () => {
 });
 
 test('Footer Links', async () => {
-    
+    await website.navigate();
+    await website.driver.sleep(2000);
+    await website.scrollToElement(website.returnsFAQ);
+    await website.click(website.returnsFAQ);
+    await website.scrollToElement(website.contact);
+    await website.click(website.contact);
+    await website.scrollToElement(website.privacyPolicy);
+    await website.click(website.privacyPolicy);
+    await website.scrollToElement(website.termsofService);
+    await website.click(website.termsofService);
+    await website.driver.quit();
 });
 
 test('Socials', async () => {

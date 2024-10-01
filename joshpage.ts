@@ -29,7 +29,10 @@ export class noHopeSupply extends BasePage {
     state: By = By.xpath ('(//option[@value="UT"])');
     zipcode: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[8]')
     confirm: By = By.xpath ('(//span[@class="sc-jtQUzJ fFaa-di"])[2]');
-
+    returnsFAQ: By = By.xpath ('(//a[@href="/pages/returns-faq"])');
+    contact: By = By.xpath ('(//a[@href="/pages/contact"])');
+    privacyPolicy: By = By.xpath ('(//a[@href="/pages/privacy-policy"])');
+    termsofService: By = By.xpath ('(//a[@href="/pages/terms-of-service"])');
 
     constructor() {
         super({url: 'https://nohopesupply.com/en-usd'});
