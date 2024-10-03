@@ -30,7 +30,8 @@ test('Checkout', async () => {
     await website.click(website.shirt);
     await website.scrollToElement(website.size);
     await website.click(website.size);
-    await website.scrollToElement(website.quantity);
+    await website.scrollToElement(website.cQuantity);
+    await website.click(website.cQuantity);
     await website.click(website.quantity);
     await website.scrollToElement(website.addToCartButton);
     await website.click(website.addToCartButton);

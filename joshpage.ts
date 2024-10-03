@@ -3,12 +3,12 @@ import { By } from "selenium-webdriver";
 const fs = require('fs');
 
 export class noHopeSupply extends BasePage {
-    insta: By = By.xpath ('(//a[@href="https://instagram.com/nohopesupply"])[3]');
-    twitter: By = By.xpath ('(//a[@href="https://twitter.com/nohopesupply"])[2]');
-    tiktok: By = By.xpath ('(//a[@href="https://www.tiktok.com/@nohopesupply"])[2]');
+    insta: By = By.xpath ('(//li[@class="footer__list-item footer__list-item--social"])[1]');
+    twitter: By = By.xpath ('(//li[@class="footer__list-item footer__list-item--social"])[2]');
+    tiktok: By = By.xpath ('(//li[@class="footer__list-item footer__list-item--social"])[3]');
     shirt: By = By.xpath ('(//div[@class="product-tile"])[1]');
     size: By = By.xpath ('(//div[@class="radio-button radio-button--narrow"])[2]');
-    cQuantity: By = By.xpath ('(//select[@class="select-field__select"])')
+    cQuantity: By = By.xpath ('(//select[@class="select-field__select"])');
     quantity: By = By.xpath ('(//option[@value="2"])');
     addToCartButton: By = By.xpath ('(//button[@class="button button--primary button--expand"])[1]');
     home: By = By.xpath ('(//li[@class="header__list-item"])[1]');
@@ -21,20 +21,20 @@ export class noHopeSupply extends BasePage {
     clubExclusives: By = By.xpath ('(//li[@class="header__dropdown-item"])[15]');
     checkout: By = By.xpath ('(//button[@type="submit"])');
     continue: By = By.xpath ('(//button[@role="button"])');
-    email: By = By.id ('[id="email.address__label"]')
-    fullName: By = By.id ('[id="shippingAddress.name__label"]')
-    streetAddress: By = By.id ('[id="shippingAddress.address1__label"]')
-    apartment: By = By.id ('[id="shippingAddress.address2__label"]')
-    city: By = By.id ('[id="shippingAddress.address1__input"]')
+    email: By = By.id ('[id="email.address__label"]');
+    fullName: By = By.id ('[id="shippingAddress.name__label"]');
+    streetAddress: By = By.id ('[id="shippingAddress.address1__label"]');
+    apartment: By = By.id ('[id="shippingAddress.address2__label"]');
+    city: By = By.id ('[id="shippingAddress.address1__input"]');
     country: By = By.xpath ('(//option[@value="US"])');
-    sState: By = By.xpath ('(//select[@name="shippingAddress.state"])')
+    sState: By = By.xpath ('(//select[@name="shippingAddress.state"])');
     state: By = By.xpath ('(//option[@value="UT"])');
-    zipcode: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[8]')
+    zipcode: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[8]');
     confirm: By = By.xpath ('(//span[@class="sc-jtQUzJ fFaa-di"])[2]');
-    returnsFAQ: By = By.xpath ('(//a[text()="Returns & FAQ"])')
-    contact: By = By.xpath ('(//a[text()="Contact"])')
-    privacyPolicy: By = By.xpath ('(//a[text()="Privacy Policy"])')
-    termsofService: By = By.xpath ('(//a[text()="Terms of Service"])')
+    returnsFAQ: By = By.xpath ('(//a[text()="Returns & FAQ"])');
+    contact: By = By.xpath ('(//a[text()="Contact"])');
+    privacyPolicy: By = By.xpath ('(//a[text()="Privacy Policy"])');
+    termsofService: By = By.xpath ('(//a[text()="Terms of Service"])');
 
     constructor() {
         super({url: 'https://nohopesupply.com/en-usd'});
