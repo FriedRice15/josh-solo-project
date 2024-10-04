@@ -43,8 +43,9 @@ test('Checkout', async () => {
     await website.setInput(website.fullName, "Josh Powell");
     await website.setInput(website.streetAddress, "123 Rich Lane");
     await website.setInput(website.apartment, "#1");
-    await website.setInput(website.city, "Olympus");
-    await website.scrollToElement(website.state);
+    await website.setInput(website.city, "Orem");
+    await website.scrollToElement(website.sState);
+    await website.click(website.sState);
     await website.click(website.state);
     await website.setInput(website.zipcode, "12345");
     await website.scrollToElement(website.continue);

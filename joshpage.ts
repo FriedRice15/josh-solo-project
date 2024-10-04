@@ -27,7 +27,7 @@ export class noHopeSupply extends BasePage {
     apartment: By = By.id ('[id="shippingAddress.address2__label"]');
     city: By = By.id ('[id="shippingAddress.address1__input"]');
     country: By = By.xpath ('(//option[@value="US"])');
-    sState: By = By.xpath ('(//select[@name="shippingAddress.state"])');
+    sState: By = By.xpath ('(//div[@class="sc-dTSHqv kZaWsi"])[2]');
     state: By = By.xpath ('(//option[@value="UT"])');
     zipcode: By = By.xpath ('(//div[@class="sc-gQaihK igqQIT"])[8]');
     confirm: By = By.xpath ('(//span[@class="sc-jtQUzJ fFaa-di"])[2]');
